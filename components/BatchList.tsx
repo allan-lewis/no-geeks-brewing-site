@@ -3,7 +3,7 @@ import useSWR, { SWRConfig } from 'swr'
 export default function BatchList({filter}) {
   const fetcher = (...args) => fetch(`https://api.brewfather.app/v2/batches?complete=true&limit=50&status=` + filter, {
     headers: {
-      'Authorization': 'Basic UDFVckNyNGJaZ2RCREpua0E0MDlqQ2M1ck4xMzpJeHBrS0NMZElrRlk2QkFBSXFSblNZcWszb0VYQ3pZSW9hbU9RSEM1N2xibkprbm1vUGEyM2tZRmNVTEZqQWtw'
+      'Authorization': 'Basic '
     }
   }).then(res => res.json()).then(data => {
       const transformedData: Batches = {
