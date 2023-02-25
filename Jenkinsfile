@@ -31,7 +31,7 @@ spec:
   stages {
     stage('Build with Kaniko') {
       steps {
-        git branch: 'main', url: 'https://github.com/allan-lewis/no-geeks-brewing-site'
+        git branch: 'master', url: 'https://github.com/allan-lewis/no-geeks-brewing-site'
         container(name: 'kaniko') {
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination allanelewis/ngb-site:latest
