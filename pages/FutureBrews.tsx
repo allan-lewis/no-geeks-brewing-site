@@ -1,13 +1,19 @@
-import type { NextPage } from "next";
+import { load } from "../graphql/Batches"
+import { Batches } from "../types/Batches"
 import BatchPage from "../components/BatchPage";
+import type { NextPage } from "next";
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
-const FutureBrews: NextPage = () => {
-  return (
-    <>
-    <BatchPage title="Future Brews" filter="Planning" />
-  </>
-  )
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    return load("planning")
+}
+
+const FutureBrews: NextPage = (batches: Batches) => {
+    return (
+      <>
+          <BatchPage batches={batches.batches} />
+      </>
+    )
 };
-
-export default FutureBrews;
   
+export default FutureBrews;

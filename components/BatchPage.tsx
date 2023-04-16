@@ -1,9 +1,7 @@
-import BatchList from "./BatchList";
-
-export default function BatchPage({title, filter}) {
+export default function BatchPage({batches}) {
     return (
       <>
-        <BatchList filter={filter} />
+        {batches.batches.map((object, i) => <div key={object.key}><span></span><span>{new Date(object.brewDate).toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}</span> - <span>Batch #{object.batchNumber}</span> - <span>{object.name}</span> ({object.style})</div>)}
       </>
     )
 }
