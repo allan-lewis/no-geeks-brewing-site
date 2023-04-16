@@ -9,10 +9,9 @@ phases:
       - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
-      - mvn package
       - docker build -t allanelewis/no-geeks-brewing-site:latest .
       - docker tag allanelewis/no-geeks-brewing-site:latest allanelewis/no-geeks-brewing-site:latest
-  # post_build:
-  #   commands:
-  #     - docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD
-  #     - docker push allanelewis/no-geeks-brewing-site:latest
+  post_build:
+    commands:
+      - docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD
+      - docker push allanelewis/no-geeks-brewing-site:latest
