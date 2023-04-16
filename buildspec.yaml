@@ -12,7 +12,7 @@ phases:
       - mvn package
       - docker build -t allanelewis/no-geeks-brewing-site:latest .
       - docker tag allanelewis/no-geeks-brewing-site:latest allanelewis/no-geeks-brewing-site:latest
-  post_build:
-    commands:
-      - docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD
-      - docker push allanelewis/no-geeks-brewing-site:latest
+  # post_build:
+  #   commands:
+  #     - docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD
+  #     - docker push allanelewis/no-geeks-brewing-site:latest
