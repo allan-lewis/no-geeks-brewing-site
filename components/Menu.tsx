@@ -7,11 +7,10 @@ const path = [
   { uid: 444, name: 'Archives', id: 4, path: '/Archives' }
 ];
 
-export default function Header() {
+export default function Menu() {
     return (
         <header>
         <nav>
-          <span>No Geeks Brewing</span>
           <ul>
             {path.map((value) => {
               return (
@@ -26,4 +25,4 @@ export default function Header() {
         </nav>
       </header>
     )
-  }
+  }  
