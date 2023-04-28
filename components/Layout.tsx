@@ -4,7 +4,7 @@ import Menu from "./Menu";
 export default function Layout({ children }) {
     return (
       <>
-        <body>
+        <div className="container">
             <div id="left" className="column">
                 <div className="top-left">Placeholder for logo</div>
                 <div className="bottom"><Menu/></div>
@@ -15,7 +15,7 @@ export default function Layout({ children }) {
                 </div>
                 <div className="bottom"><section>{children}</section></div>
             </div>
-        </body>
+        </div>
       </>
     )
 }
